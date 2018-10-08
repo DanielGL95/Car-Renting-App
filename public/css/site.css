@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu li {
+  display: inline-block
+}
+
+.menu li:after {
+  content: "\00a0";
+}
+
+.img {
+  width: 80%;
+
+}
+
+.nav {
+  padding: 10px;
+
+}
+
+.badge {
+  padding: 30px;
+}
+
+.car {
+  margin: 15px;
+  padding: 15px;
+}
+
+.footer {
+  margin: 10px;
+
+}
+
+.btn{
+  width: 15%
+}
+
+.error {
+  width: 60%;
+  margin: 10px auto 20px;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.dayForm {
+  
+
+}
+
+.dayForm select {
+  padding: 6px;
+  border-color: black;
+  border-radius: 5px;
+
+}
+
+.dayForm input {
+  padding: 6px;
+  float: right
+}
+
+.cover {
+  width: 80%;
+}
+
+
+/* @media screen and(min-width: 1110px){
+  .cover {
+    width: 30%;
+  }
+} */

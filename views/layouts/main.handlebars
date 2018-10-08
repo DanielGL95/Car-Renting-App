@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Car Renting System</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="/css/site.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="w3-container">
+
+    <div class="nav w3-bar w3-black">
+      <a href="/cars/all" class=" w3-bar-item w3-button w3-mobile">Home</a>
+      <a href="/about" class="w3-bar-item w3-button w3-mobile">About</a>
+
+      {{#if isAdmin}}
+      <a href="/cars/add" class="w3-bar-item w3-button w3-mobile">Add Cars</a>
+      {{/if}}
+
+      {{#if currentUser}}
+      <a href="/users/profile" class="w3-bar-item w3-button w3-mobile ">Profile</a>
+
+      <form id="logout-form" action="/users/logout" method="POST"></form>
+      <a class="w3-bar-item w3-button w3-mobile" href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+
+      {{else}}
+      <a class="w3-bar-item w3-button w3-mobile" href="/users/register">Register</a>
+      <a class="w3-bar-item w3-button w3-mobile" href="/users/login">Login</a>
+      {{/if}}
+      <p class="w3-myfont w3-large w3-bar-item w3-right">Rent A Car</p>
+    </div>
+    {{#if globalError}}
+    <div class="error w3-container w3-red w3-card-4 w3-round-xxlarge">
+      <h3>{{globalError}}</h3>
+    </div>
+    {{/if}}
+
+
+      {{{body}}}
+   
+
+
+    <div class=" w3-myfont w3-center w3-container w3-margin-top w3-black">
+      <h4>Car Renting System 2018</h4>
+    </div>
+
+  </div>
+</body>
+
+</html>

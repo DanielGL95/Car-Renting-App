@@ -1,0 +1,30 @@
+
+
+<div class="w3-myfont container">
+
+<h2  class="w3-myfont w3-padding">Register a car</h3>
+
+
+<form class="w3-container w3-padding w3-margin w3-card-4" action="/cars/add" method="POST">
+  <label >Make</label> 
+  <input  class="w3-input" type="text" name="make" value="{{make}}" />
+  <br />
+     <label >Model</label>
+  <input  class="w3-input" type="text" name="model" value="{{model}}" />
+  <br />
+     <label >Year</label>
+  <input  class="w3-input" type="text" name="year" value="{{year}}"/>
+  <br />
+     <label >Price Per Day</label>
+  <input  class="w3-input" type="text" name="priceperday" value="{{priceperday}}"/>
+  <br />
+     <label >Power</label>
+  <input  class="w3-input" type="text" name="power" value="{{power}}"/>
+  <br />
+    <label >Image</label> 
+  <input  class="w3-input" type="url" name="image" value="{{image}}"/>
+  <br />
+ 
+  <input class="w3-btn w3-margin w3-white w3-border w3-border-blue w3-round-xlarge" type="submit" value="Register" />
+</form>
+</div>

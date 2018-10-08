@@ -1,0 +1,80 @@
+<div class="w3-center w3-margin">
+    <img class="w3-round cover" src="/car.jpg" alt="">
+</div>
+
+
+
+<div class="w3-myfont container">
+
+
+
+    <form class="w3-center w3-container" action="/cars/all" method="GET">
+        <input placeholder="Search for a car" class="w3-input w3-animate-input w3-margin" type="text" style="width:100%"
+            type="text" name="search">
+        <input class=" w3-btn w3-white w3-border w3-border-blue w3-round" type="submit" value="Search">
+    </form>
+
+    {{#each cars }}
+    <div class="car w3-row w3-border ">
+        <div class="w3-twothird ">
+
+            <img class="img" src="{{this.image}}" alt="{{this.make}} {{this.model}}">
+
+        </div>
+        <div class="w3-third">
+
+            <div class="w3-card-4 w3-margin">
+
+                <header class=" w3-light-grey">
+                    <h3 class="w3-center w3-padding">{{this.make}} {{this.model}}</h3>
+                </header>
+
+                <div class="w3-padding">
+                    <p class="w3-center">Year of release {{this.year}}</p>
+                    <hr>
+
+
+                    <h3 class="w3-center">Price per day: {{this.pricePerDay}} lv</h3>
+                    {{#if this.power}}
+                    <h3 class="w3-center">Power: {{this.power}} hp</h3>
+                    {{/if}}
+
+                </div>
+            </div>
+
+            {{#if ../currentUser}}
+            <form class="dayForm w3-margin" action="/cars/rent/{{this._id}}" method="POST">
+                <select name="days" >
+                    <option  selected disabled hidden>Days</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+
+                    <option value="3">3</option>
+
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                    <option value="6">6</option>
+
+                    <option value="7">7</option>
+
+                </select>
+                <input class="w3-btn w3-white w3-border w3-border-blue w3-round" type="submit" value="Rent">
+            </form>
+            {{/if}}
+        </div>
+    </div>
+    {{else}}
+    <h2>No Cars available</h2>
+
+    {{/each}}
+
+    <div class="footer w3-bar w3-border w3-round">
+        {{#if hasPrev}}
+        <a href="/cars/all?page={{this.prevPage}}&search={{search}}" class="w3-button">&#10094; Previous</a>
+        {{else}}
+        <a href="/cars/all?page={{this.nextPage}}&search={{search}}" class="w3-button w3-right">Next &#10095;</a>
+        {{/if}}
+    </div>
+
+</div>
